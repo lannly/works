@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>lann'blog - 作品集</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta name="format-detection" content="telphone=no, email=no"/>
+    <meta name="full-screen" content="yes">
+    <meta name="x5-fullscreen" content="true">
+    <meta name="wap-font-scale" content="no">
+    <link rel="stylesheet" href="css/reset.css"/>
+    <style type="text/css">
+        .wrap-menu {width:90%;max-width: 400px; margin:50px auto 30px; overflow:auto; background:#F6F6F6; font:1.5rem Tahoma,Arial,sans-serif}
+        .wrap-menu ul{ list-style:none; margin:0; padding:0;}
+        .wrap-menu>ul{-webkit-border-radius: 10px;-moz-border-radius: 10px; border-radius: 10px;overflow: hidden;}
+        .wrap-menu ul li{ text-indent:3em; white-space:nowrap; border-bottom: 1px solid #efefef; }
+        .wrap-menu ul li h2{    cursor: pointer;width: 100%;margin: 0 0 1px 0;color: #fff;background: #222222;height: 50px;line-height: 50px;font-size: 1.6rem;}
+        .wrap-menu ul li a{ display:block; outline:none; height:40px; line-height:40px; margin:1px 0; color:#1A385C; text-decoration:none;}
+        .wrap-menu ul li a:hover{text-indent: 4.5em;text-shadow:  0 2px 1px #ffffff;}
+        .wrap-menu ul li a:active {text-indent: 4.5em;}
+        .wrap-menu ul li img{ margin-right:10px; margin-left:-17px; margin-top:0; width:7px; height:7px; background:url(img/arrow.gif) no-repeat; border:none;}
+        .wrap-menu ul li img.unfold{ background-position:0 -9px;}
+        .wrap-menu ul li a:hover{ background:#ccc;}
+        #toTop{text-align:center; width: 40px;height: 44px;position: fixed;bottom: 40px;right: 10px;color: #fff; font-size: 14px;background: #000;z-index10;cursor: pointer;}
+    </style>
+</head>
+<body>
+<div class="wrap-menu">
+</div>
+
+<div id="toTop">返回顶部</div>
+<script src="js/jquery-1.8.3.min.js"></script>
+<script src="js/menu.js"></script>
+<script>
+    var testMenu=[
+        {
+            "name": "网站常用功能",
+            "submenu": [
+                {
+                    "name": "tab选项卡",
+                    "submenu": [
+                        {
+                            "name": "swiper实例",
+                            "url": "swiper/index.html"
+                        },
+                        {
+                            "name": "tab-纯js手写左右滑动(移动端)",
+                            "url": "swiper/tab-纯js手写左右滑动(移动端).html"
+                        }
+                    ]
+                },
+                {
+                    "name": "slide焦点图",
+                    "submenu": [
+                        {
+                            "name": "swiper实例",
+                            "url": "swiper/index.html"
+                        },
+                        {
+                            "name": "tab-纯js手写左右滑动(移动端)",
+                            "url": "swiper/tab-纯js手写左右滑动(移动端).html"
+                        }
+                    ]
+                },
+                {
+                    "name": "Pop弹出层",
+                    "submenu": [
+                        {
+                            "name": "pop弹出层-js基础版",
+                            "url": "popBox/pop弹出层-js基础版.html"
+                        },
+                        {
+                            "name": "pop弹出层-渐变消失",
+                            "url": "popBox/pop弹出层-渐变消失.html"
+                        },
+                        {
+                            "name": "pop弹出层-js动态加载生成自动关闭",
+                            "url": "popBox/pop弹出层-js动态加载生成自动关闭.html"
+                        },
+                        {
+                            "name": "pop弹出层-jq动画弹出",
+                            "url": "popBox/pop弹出层-jq动画弹出.html"
+                        },
+                        {
+                            "name": "模仿mui弹框",
+                            "url": "popBox/模仿mui弹框.html"
+                        }
+                    ]
+                },
+                {
+                    "name": "slide焦点图",
+                    "url": ""
+                }
+            ]
+        },
+        {
+            "name": "表单常用代码",
+            "submenu": [
+                {
+                    "name": "二级菜单",
+                    "url": ""
+                },
+                {
+                    "name": "二级菜单",
+                    "url": ""
+                }
+            ]
+        },
+        {
+            "name": "移动端常用代码",
+            "submenu": [
+                {
+                    "name": "二级菜单",
+                    "url": ""
+                },
+                {
+                    "name": "二级菜单",
+                    "url": ""
+                }
+            ]
+        },
+        {
+            "name": "css样式练习",
+            "submenu": [
+                {
+                    "name": "css渐变描边",
+                    "url": "css类/css渐变描边.html"
+                },
+                {
+                    "name": "canvas文字描边",
+                    "url": "css类/canvas文字描边.html"
+                },
+                {
+                    "name": "加载中…",
+                    "submenu": [
+                        {
+                            "name": "加载1",
+                            "url": "css类/加载1.html"
+                        },
+                        {
+                            "name": "加载2",
+                            "url": "css类/加载2.html"
+                        },
+                        {
+                            "name": "加载3",
+                            "url": "css类/加载3.html"
+                        },
+                        {
+                            "name": "加载4",
+                            "url": "css类/加载4.html"
+                        },
+                        {
+                            "name": "加载5",
+                            "url": "css类/加载5.html"
+                        },
+                        {
+                            "name": "加载6",
+                            "url": "css类/加载6.html"
+                        },
+                        {
+                            "name": "加载7",
+                            "url": "css类/加载7.html"
+                        }
+                    ]
+                },
+                {
+                    "name": "canvas文字描边",
+                    "url": "css类/canvas文字描边.html"
+                },
+                {
+                    "name": "二级菜单",
+                    "submenu": [
+                        {
+                            "name": "三级菜单",
+                            "submenu": [
+                                {
+                                    "name": "四级菜单",
+                                    "url": ""
+                                },
+                                {
+                                    "name": "四级菜单",
+                                    "submenu": [
+                                        {
+                                            "name": "五级菜单",
+                                            "url": ""
+                                        },
+                                        {
+                                            "name": "五级菜单",
+                                            "url": ""
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "name": "三级菜单",
+                            "url": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "二级菜单",
+                    "url": ""
+                }
+            ]
+        },
+        {
+            "name": "一级菜单",
+            "submenu": [
+                {
+                    "name": "二级菜单",
+                    "url": ""
+                },
+                {
+                    "name": "二级菜单",
+                    "url": ""
+                },
+                {
+                    "name": "二级菜单",
+                    "url": ""
+                }
+            ]
+        },
+        {
+            "name": "一级菜单",
+            "submenu": [
+                {
+                    "name": "二级菜单",
+                    "url": ""
+                },
+                {
+                    "name": "二级菜单",
+                    "url": ""
+                },
+                {
+                    "name": "二级菜单",
+                    "url": ""
+                }
+            ]
+        }
+    ];
+    $(function(){
+        new AccordionMenu({menuArrs:testMenu});
+
+        $("#toTop").click(function(){
+
+            $("html,body").animate({"scrollTop":"0"},500);
+        });
+
+    });
+</script>
+
+</body>
+</html>

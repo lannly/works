@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta name="format-detection" content="telphone=no, email=no"/>
+    <meta name="full-screen" content="yes">
+    <meta name="x5-fullscreen" content="true">
+    <meta name="wap-font-scale" content="no">
+</head>
+<body>
+<canvas id="canvasId" width="400" height="300"></canvas>
+<script type="text/javascript">
+    var canvas = document.getElementById("canvasId");
+    var ctx = canvas.getContext("2d");
+    ctx.font = "bold 50px/50px 黑体,arial,sans-serif";
+    var lg = ctx.createLinearGradient(0, 0, 0, 60);
+    lg.addColorStop(0,"#6633ff");
+    lg.addColorStop(0.5,"#66ccff");
+    lg.addColorStop(1,"#6633ff");
+    ctx.fillStyle = lg;
+    ctx.strokeStyle = "#0099ff";
+    ctx.lineWidth = 3;
+    ctx.shadowColor = "#666666";
+    ctx.shadowBlur = 10;
+    ctx.shadowOffsetX = 5;
+    ctx.shadowOffsetY = 5;
+    ctx.strokeText("CANVAS文字描边",10,50);
+    ctx.fillText("CANVAS文字描边",10,50);
+</script>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <title>js弹出层</title>
+    <style>
+        #close {
+            background: #0067b5 url(../img/close1.png) no-repeat 0 0;
+            background-size: 30px;
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+            position: absolute;
+            right: 5px;
+            top: 5px;
+            text-indent: -999em;
+        }
+
+        #mask {
+            background-color: #000;
+            opacity: 0.5;
+            filter: alpha(opacity=50);
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: 1000;
+        }
+
+        #popBox {
+            position: absolute;
+            width: 80%;
+            min-height: 200px;
+            height: 200px;
+            height: auto !important;
+            z-index: 1001;
+            background: #fff;
+            padding: 10px;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+<a href="#" id="showPopBox">弹出层</a>
+<script>
+    function openPopBox() {
+        //获取页面的高度和宽度
+        var sWidth = document.body.scrollWidth;
+        var sHight = document.body.scrollHeight;
+
+        //获取页面的可视区域高度和宽度
+        var wHeight = document.documentElement.clientHeight;
+
+        //创建遮罩区域
+        var oMask = document.createElement("div");
+        oMask.id = "mask";
+        oMask.style.width = sWidth + "px";
+        oMask.style.height = sHight + "px";
+        document.body.appendChild(oMask);
+
+        //创建弹出框
+        var oPopBox = document.createElement("div");
+        oPopBox.id = "popBox";
+        oPopBox.innerHTML = "<div id='close'>关闭</div>";
+        oPopBox.innerHTML += "<div>弹框内容</div>";
+        oPopBox.innerHTML += "<div>弹框追加内容</div>";
+        document.body.appendChild(oPopBox);
+
+
+        //获取弹框的宽和高
+        var dHeight = oPopBox.offsetHeight;
+        var dWidth = oPopBox.offsetWidth;
+        //设置弹框的left和top
+        oPopBox.style.left = sWidth / 2 - dWidth / 2 + "px";
+        oPopBox.style.top = wHeight / 2 - dHeight / 2 + "px";
+        //点击关闭按钮
+        var oClose = document.getElementById("close");
+        //点击弹框以外的区域也可以关闭登陆框
+        oClose.onclick = oMask.onclick = function () {
+            document.body.removeChild(oPopBox);
+            document.body.removeChild(oMask);
+        };
+
+    }
+
+    window.onload = function () {
+        var oBtn = document.getElementById("showPopBox");
+        //点击弹出按钮
+        oBtn.onclick = function () {
+            openPopBox();
+            return false;
+        }
+    };
+</script>
+</body>
+</html>
+
+

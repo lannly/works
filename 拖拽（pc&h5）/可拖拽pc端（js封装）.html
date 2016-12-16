@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>可拖拽（仅pc端）</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <!-- 删除苹果默认的工具栏和菜单栏 -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <!-- 设置苹果工具栏颜色 -->
+    <meta name="format-detection" content="telphone=no, email=no"/>
+    <!-- 忽略页面中的数字识别为电话，忽略email识别 -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        #div1 {
+            width: 100px;
+            height: 100px;
+            cursor: move;
+            background-color: red;
+        }
+        #div2 {
+            top: 300px;
+            width: 100px;
+            height: 100px;
+            cursor: move;
+            background-color: #000;
+        }
+    </style>
+</head>
+<body>
+<div id="div1"></div>
+<div id="div2"></div>
+<script>
+    window.onload = function () {
+        new Drag("div1");
+        new Drag("div2");
+    };
+    function Drag(id) {
+        this.div = document.getElementById(id);
+        if (this.div) {
+            this.div.style.cursor = "move";
+            this.div.style.position = "absolute";
+        }
+        this.disX = 0;
+        this.disY = 0;
+        var _this = this;
+        this.div.onmousedown = function (evt) {
+            _this.getDistance(evt);
+            document.onmousemove = function (evt) {
+                _this.setPosition(evt);
+            }
+            _this.div.onmouseup = function () {
+                _this.clearEvent();
+            }
+        }
+    }
+    Drag.prototype.getDistance = function (evt) {
+        var oEvent = evt || event;
+        this.disX = oEvent.clientX - this.div.offsetLeft;
+        this.disY = oEvent.clientY - this.div.offsetTop;
+    }
+    Drag.prototype.setPosition = function (evt) {
+        var oEvent = evt || event;
+        var l = oEvent.clientX - this.disX;
+        var t = oEvent.clientY - this.disY;
+        if (l <= 0) {
+            l = 0;
+        }
+        else if (l >= document.documentElement.clientWidth - this.div.offsetWidth) {
+            l = document.documentElement.clientWidth - this.div.offsetWidth;
+        }
+        if (t <= 0) {
+            t = 0;
+        }
+        else if (t >= document.documentElement.clientHeight - this.div.offsetHeight) {
+            t = document.documentElement.clientHeight - this.div.offsetHeight;
+        }
+        this.div.style.left = l + "px";
+        this.div.style.top = t + "px";
+    }
+    Drag.prototype.clearEvent = function () {
+        this.div.onmouseup = null;
+        document.onmousemove = null;
+    }
+</script>
+</body>
+</html>

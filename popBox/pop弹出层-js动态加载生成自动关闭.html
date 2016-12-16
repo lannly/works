@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta name="format-detection" content="telphone=no, email=no"/>
+    <meta name="full-screen" content="yes">
+    <meta name="x5-fullscreen" content="true">
+    <meta name="wap-font-scale" content="no">
+</head>
+<body>
+<a href="#" id="showPopBox">弹出层</a>
+<script>
+    window.onload = function () {
+        var oBtn = document.getElementById("showPopBox");
+        //点击弹出按钮
+        oBtn.onclick = function () {
+            openPopBox('恭喜你，成功啦',1);  //bAutoHide参数为1时，弹出层2s后自动消失
+        }
+
+    };
+</script>
+<script>
+    <!-- js生成popbox 弹出层-->
+    function openPopBox(text,bAutoHide) {
+
+        var sWidth = document.body.scrollWidth;
+        var sHight = document.body.scrollHeight;
+        var wHeight = document.documentElement.clientHeight;
+
+        var oMask = document.createElement("div");
+        oMask.id = "mask";
+        oMask.style.backgroundColor="#000";
+        oMask.style.opacity="0.5";
+        oMask.style.zIndex="1000";
+        oMask.style.left="0";
+        oMask.style.top="0";
+        oMask.style.position="absolute";
+        oMask.style.width = sWidth + "px";
+        oMask.style.height = sHight + "px";
+        document.body.appendChild(oMask);
+
+
+        var oPopBox = document.createElement("div");
+        oPopBox.id = "popBox";
+        oPopBox.style.cssText="position: absolute;width: 80%;min-height: 10px;z-index: 1001;background: #e74c3c;padding: 50px 20px 10px 20px;border-radius: 10px;box-sizing: border-box;";
+
+        var line = document.createElement("div");
+        line.id = "line";
+        line.style.cssText="position: absolute;top:0;left:0;width: 100%;height:34px;background: #d44637;z-index: 1001;border-top-left-radius: 10px;border-top-right-radius: 10px;";
+        oPopBox.appendChild(line);
+
+        var closeBtn = document.createElement("div");
+        closeBtn.id = "close";
+        closeBtn.style.cssText="background: url(img/close1.png) no-repeat 0 0;color: #fff;background-size: auto 24px;z-index: 1002;border-radius:50%;width: 24px;line-height: 24px;height: 24px;cursor: pointer;position: absolute;right: 5px;top: 5px;";
+        oPopBox.appendChild(closeBtn);
+
+
+        var ele = document.createElement("div");
+        ele.id = "content";
+        ele.style.cssText="line-height: 24px;font-size: 18px;color: #fff;margin-bottom: 20px;text-align: center;";
+        ele.innerText= text;
+        oPopBox.appendChild(ele);
+
+
+        var okBtn = document.createElement("a");
+        okBtn.id = "okBtn";
+        okBtn.style.cssText="color: #fff;width: 90px;line-height: 26px;height: 26px;display: block;text-align: center;margin:0 auto 10px;font-size: 16px;border: 1px solid rgba(255, 255, 255, 0.5);border-radius: 20px;";
+        okBtn.innerHTML += "\u786e\u5b9a";
+        oPopBox.appendChild(okBtn);
+
+        document.body.appendChild(oPopBox);
+
+
+        var dHeight = oPopBox.offsetHeight;
+        var dWidth = oPopBox.offsetWidth;
+
+        oPopBox.style.left = sWidth / 2 - dWidth / 2 + "px";
+        oPopBox.style.top = wHeight / 2 - dHeight / 2 + "px";
+
+        var oClose = document.getElementById("close");
+
+        okBtn.onclick = oClose.onclick = oMask.onclick = function () {
+            document.body.removeChild(oPopBox);
+            document.body.removeChild(oMask);
+        };
+        if(bAutoHide == 1){  //bAutoHide参数为1时，弹出层2s后自动消失
+            setTimeout(function(){
+                oPopBox.remove();
+                oMask.remove();
+            },2000)
+        }
+    }
+
+</script>
+</body>
+</html>

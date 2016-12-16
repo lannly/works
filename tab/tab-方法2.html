@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta name="format-detection" content="telphone=no, email=no"/>
+    <meta name="full-screen" content="yes">
+    <meta name="x5-fullscreen" content="true">
+    <meta name="wap-font-scale" content="no">
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        li{
+            list-style: none;
+            float:left;
+        }
+        #tabCon{
+            clear: both;
+        }
+        #tabCon_1{
+            display: none;
+        }
+        #tabCon_2{
+            display: none;
+        }
+        #tabCon_3{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div id="tanContainer">
+    <div id="tab">
+        <ul>
+            <li onclick="changeTab('0')">标题一</li>
+            <li onclick="changeTab('1')">标题二</li>
+            <li onclick="changeTab('2')">标题三</li>
+            <li onclick="changeTab('3')">标题四</li>
+        </ul>
+    </div>
+    <div id="tabCon">
+        <div id="tabCon_0">内容一</div>
+        <div id="tabCon_1">内容二</div>
+        <div id="tabCon_2">内容三</div>
+        <div id="tabCon_3">内容四</div>
+    </div>
+</div>
+<script>
+    function changeTab(index){
+        for(var i=0;i<4;i++){
+            document.getElementById("tabCon_"+i).style.display = "none";
+        }
+
+        document.getElementById("tabCon_"+index).style.display = "block";
+
+    }
+
+</script>
+</body>
+</html>

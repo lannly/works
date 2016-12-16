@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta name="format-detection" content="telphone=no, email=no"/>
+    <meta name="full-screen" content="yes">
+    <meta name="x5-fullscreen" content="true">
+    <meta name="wap-font-scale" content="no">
+    <style>
+        *{padding: 0;margin: 0;}
+        li{list-style: none;}
+        #tanContainer{width: 100%;max-width: 400px;margin: 0 auto;}
+        #tabNav ul{background: #ddddaa;width: 100%;overflow: hidden;}
+        #tabNav ul li{float: left;width: 25%;height: 40px;line-height: 40px;}
+        #tab div{display: none;height: 400px;}
+        #tab div:first-child {display: block;}
+    </style>
+</head>
+<body>
+<div id="tanContainer">
+    <div id="tabNav">
+        <ul>
+            <li onclick="tab('tab1')">标题一</li>
+            <li onclick="tab('tab2')">标题二</li>
+            <li onclick="tab('tab3')">标题三</li>
+            <li onclick="tab('tab4')">标题四</li>
+        </ul>
+    </div>
+    <div id="tab">
+        <div id="tab1">内容一</div>
+        <div id="tab2">内容二</div>
+        <div id="tab3">内容三</div>
+        <div id="tab4">内容四</div>
+    </div>
+</div>
+<script>
+    function tab(index){
+        var tabs = ["tab1","tab2","tab3","tab4"];
+        for(var i=0;i<tabs.length;i++){
+            if(tabs[i] == index){
+                document.getElementById(tabs[i]).style.display = "block";
+            }else{
+                document.getElementById(tabs[i]).style.display = "none";
+            }
+        }
+    }
+
+</script>
+</body>
+</html>
