@@ -11,6 +11,10 @@
     <meta name="x5-fullscreen" content="true">
     <meta name="wap-font-scale" content="no">
     <link rel="stylesheet" href="css/reset.css"/>
+    <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+    <link href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+    <link href="/lib/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+    <link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
     <style type="text/css">
         .wrap-menu {width:90%;max-width: 400px; margin:50px auto 30px; overflow:auto; background:#F6F6F6; font:1.5rem Tahoma,Arial,sans-serif}
         .wrap-menu ul{ list-style:none; margin:0; padding:0;}
@@ -39,51 +43,51 @@
         </div>
         <p class="site-subtitle">欲戴皇冠，必承其重</p>
     </div>
-    <div class="site-nav-toggle">
-        <button>
-            <span class="btn-bar"></span>
-            <span class="btn-bar"></span>
-            <span class="btn-bar"></span>
-        </button>
-    </div>
-    <nav class="site-nav">
-        <ul id="menu" class="menu">
-            <li class="menu-item menu-item-home">
-                <a href="/" rel="section">
-                    <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页
-                </a>
-            </li>
-            <li class="menu-item menu-item-archives">
-                <a href="/archives" rel="section">
-                    <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档
-                </a>
-            </li>
-            <li class="menu-item menu-item-categories">
-                <a href="/categories" rel="section">
-                    <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类
-                </a>
-            </li>
-            <li class="menu-item menu-item-tags">
-                <a href="/tags" rel="section">
-                    <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签
-                </a>
-            </li>
-            <li class="menu-item menu-item-about">
-                <a href="/about" rel="section">
-                    <i class="menu-item-icon fa fa-fw fa-user"></i> <br />关于
-                </a>
-            </li>
-            <li class="menu-item menu-item-works">
-                <a href="/works" rel="section"><i class="menu-item-icon fa fa-fw fa-book"></i> <br />作品</a>
-            </li>
-        </ul>
-    </nav>
+        <div class="site-nav-toggle">
+            <button>
+                <span class="btn-bar"></span>
+                <span class="btn-bar"></span>
+                <span class="btn-bar"></span>
+            </button>
+        </div>
+        <nav class="site-nav">
+            <ul id="menu" class="menu">
+                <li class="menu-item menu-item-home">
+                    <a href="/" rel="section">
+                        <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页
+                    </a>
+                </li>
+                <li class="menu-item menu-item-archives">
+                    <a href="/archives" rel="section">
+                        <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档
+                    </a>
+                </li>
+                <li class="menu-item menu-item-categories">
+                    <a href="/categories" rel="section">
+                        <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类
+                    </a>
+                </li>
+                <li class="menu-item menu-item-tags">
+                    <a href="/tags" rel="section">
+                        <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签
+                    </a>
+                </li>
+                <li class="menu-item menu-item-about">
+                    <a href="/about" rel="section">
+                        <i class="menu-item-icon fa fa-fw fa-user"></i> <br />关于
+                    </a>
+                </li>
+                <li class="menu-item menu-item-works">
+                    <a href="/works" rel="section"><i class="menu-item-icon fa fa-fw fa-book"></i> <br />作品</a>
+                </li>
+            </ul>
+        </nav>
     </div>
 </header>
 <div class="wrap-menu">
 </div>
 <footer class="post-footer">
-   <div class="post-eof"></div>      
+    <div class="post-eof"></div>
 </footer>
 <div class="back-to-top">
     <i class="fa fa-arrow-up"></i>
@@ -100,13 +104,14 @@
                 {
                     "name": "tab选项卡",
                     "submenu": [
+
                         {
-                            "name": "swiper实例",
-                            "url": "swiper/index.html"
+                            "name": "tab-方法1",
+                            "url": "tab/tab-方法1.html"
                         },
                         {
-                            "name": "tab-纯js手写左右滑动(移动端)",
-                            "url": "swiper/tab-纯js手写左右滑动(移动端).html"
+                            "name": "tab-方法2",
+                            "url": "tab/tab-方法2.html"
                         }
                     ]
                 },
@@ -149,8 +154,22 @@
                     ]
                 },
                 {
-                    "name": "slide焦点图",
-                    "url": ""
+                    "name": "其他",
+                    "submenu": [
+
+                        {
+                            "name": "js生成验证码",
+                            "url": "a/js生成验证码.html"
+                        },
+                        {
+                            "name": "加减按钮",
+                            "url": "a/加减按钮.html"
+                        },
+                        {
+                            "name": "文字滚动",
+                            "url": "a/文字滚动.html"
+                        }
+                    ]
                 }
             ]
         },
@@ -158,11 +177,11 @@
             "name": "表单常用代码",
             "submenu": [
                 {
-                    "name": "二级菜单",
+                    "name": "表单常用代码待定1",
                     "url": ""
                 },
                 {
-                    "name": "二级菜单",
+                    "name": "表单常用代码待定2",
                     "url": ""
                 }
             ]
@@ -171,13 +190,13 @@
             "name": "移动端常用代码",
             "submenu": [
                 {
-                    "name": "二级菜单",
-                    "url": ""
+                    "name": "复制关键字",
+                    "url": "h5/复制关键字.html"
                 },
                 {
-                    "name": "二级菜单",
-                    "url": ""
-                }
+                    "name": "复制关键字(多个)",
+                    "url": "h5/复制关键字(多个).html"
+                },
             ]
         },
         {
@@ -258,40 +277,6 @@
                             "url": ""
                         }
                     ]
-                },
-                {
-                    "name": "二级菜单",
-                    "url": ""
-                }
-            ]
-        },
-        {
-            "name": "一级菜单",
-            "submenu": [
-                {
-                    "name": "二级菜单",
-                    "url": ""
-                },
-                {
-                    "name": "二级菜单",
-                    "url": ""
-                },
-                {
-                    "name": "二级菜单",
-                    "url": ""
-                }
-            ]
-        },
-        {
-            "name": "一级菜单",
-            "submenu": [
-                {
-                    "name": "二级菜单",
-                    "url": ""
-                },
-                {
-                    "name": "二级菜单",
-                    "url": ""
                 },
                 {
                     "name": "二级菜单",
