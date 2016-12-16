@@ -27,20 +27,64 @@
     </style>
 </head>
 <body>
-<head>
-    {% include '_partials/head.swig' %}
-    <title>{% block title %}{% endblock %}</title>
-</head>
+<div class="headband"></div>
+<header id="header" class="header" itemscope itemtype="//schema.org/WPHeader">
+    <div class="header-inner"><div class="site-meta ">
+        <div class="custom-logo-site-title">
+            <a href="/"  class="brand" rel="start">
+                <span class="logo-line-before"><i></i></span>
+                <span class="site-title">lann's Blog</span>
+                <span class="logo-line-after"><i></i></span>
+            </a>
+        </div>
+        <p class="site-subtitle">欲戴皇冠，必承其重</p>
+    </div>
+    <div class="site-nav-toggle">
+        <button>
+            <span class="btn-bar"></span>
+            <span class="btn-bar"></span>
+            <span class="btn-bar"></span>
+        </button>
+    </div>
+    <nav class="site-nav">
+        <ul id="menu" class="menu">
+            <li class="menu-item menu-item-home">
+                <a href="/" rel="section">
+                    <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页
+                </a>
+            </li>
+            <li class="menu-item menu-item-archives">
+                <a href="/archives" rel="section">
+                    <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档
+                </a>
+            </li>
+            <li class="menu-item menu-item-categories">
+                <a href="/categories" rel="section">
+                    <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类
+                </a>
+            </li>
+            <li class="menu-item menu-item-tags">
+                <a href="/tags" rel="section">
+                    <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签
+                </a>
+            </li>
+            <li class="menu-item menu-item-about">
+                <a href="/about" rel="section">
+                    <i class="menu-item-icon fa fa-fw fa-user"></i> <br />关于
+                </a>
+            </li>
+            <li class="menu-item menu-item-works">
+                <a href="/works" rel="section"><i class="menu-item-icon fa fa-fw fa-book"></i> <br />作品</a>
+            </li>
+        </ul>
+    </nav>
+    </div>
+</header>
 <div class="wrap-menu">
 </div>
-<footer id="footer" class="footer">
-    <div class="footer-inner">
-        {% include '_partials/footer.swig' %}
-        {% include '_scripts/third-party/analytics/busuanzi-counter.swig' %}
-        {% block footer %}{% endblock %}
-    </div>
+<footer class="post-footer">
+   <div class="post-eof"></div>      
 </footer>
-
 <div class="back-to-top">
     <i class="fa fa-arrow-up"></i>
 </div>
