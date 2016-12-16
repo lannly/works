@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>js滚动</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta name="format-detection" content="telphone=no, email=no"/>
+    <meta name="full-screen" content="yes">
+    <meta name="x5-fullscreen" content="true">
+    <meta name="wap-font-scale" content="no">
+    <style>
+        *{margin: 0;padding: 0}
+        #scrollArea{margin: 20px;position: relative;width: 300px;height:30px;line-height: 30px;background: #efefef;overflow-x: hidden;}
+        #txt{ position: absolute;
+            top: 0;
+            left: 300px;
+            height: 30px;
+            line-height: 30px;
+            display: inline;
+            white-space: nowrap;}
+    </style>
+</head>
+<body>
+<div id="scrollArea">
+    <div id="txt">这里是滚动的文字</div>
+</div>
+<script>
+    scrollText();
+    function scrollText(){
+        var scrollArea = document.getElementById('scrollArea');
+        var txt = document.getElementById('txt');
+        //var moveWidth = scrollArea.offsetWidth+txt.offsetWidth; //滚动区域+滚动文字的长度 = 文字滚动一次的长度
+        
+        var cur_left = parseInt(txt.offsetLeft);
+        cur_left = cur_left - 2;
+        txt.style.left = (cur_left)+"px";
+
+        if(cur_left > 0 || Math.abs(cur_left) < txt.offsetWidth){
+            window.setTimeout("scrollText()",50)
+        }else if(cur_left < 0 && Math.abs(cur_left) >= txt.offsetWidth){ //
+            txt.style.left = scrollArea.offsetWidth+"px";
+            txt.innerText ="滚动文字变了"; //此时更换滚动文字的内容
+            window.setTimeout("scrollText()",50)
+        }
+    }
+</script>
+</body>
+</html>

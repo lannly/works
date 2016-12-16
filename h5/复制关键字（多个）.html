@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<head>
+    <title>复制关键字</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta http-equiv="Pragma" content="no-cache" />
+    <script src="../js/jquery-1.8.3.min.js"></script>
+</head>
+<body>
+<span class="copyText" id="copy_key1">复制关键字111</span>
+<span class="copyText" id="copy_key2">复制关键字222</span>
+<span class="copyText" id="copy_key3">复制关键字333</span>
+
+<script>
+    var $copyText = $(".copyText");
+    var myArray = [] ;  //创建数组，用来存放 可被复制关键字 元素的id
+    $copyText.each(function(){
+        myArray.push($(this).attr("id"));
+    });
+    //alert(myArray); //弹出 copy_key1，copy_key2，copy_key3
+
+    window.onload = function(){
+        copyTxt("copy_key1");
+        copyTxt("copy_key2");
+        copyTxt("copy_key3");  //需要复制关键字就传入其id再调用一遍
+    };
+
+    function copyTxt(idx){
+        for(var i=0;i<myArray.length;i++){
+            if(myArray[i] = idx){
+                document.addEventListener("selectionchange", function(e) {
+                    if(window.getSelection().anchorNode.parentNode.id == idx && document.getElementById(idx).innerText != window.getSelection()){
+                        window.getSelection().selectAllChildren(document.getElementById(idx));
+                    }
+                }, false);
+            }
+        }
+
+    }
+
+</script>
+
+</body>
+</html>

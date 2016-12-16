@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<head>
+    <title>应用详情</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta http-equiv="Pragma" content="no-cache" />
+    <script src="../js/jquery-1.8.3.min.js"></script>
+</head>
+<body>
+<span class="copyText" id="copy_key" style="font-size: 30px;">复制关键字111</span>
+
+<script type="text/javascript">
+    window.onload=function(){
+
+        document.addEventListener("selectionchange", function(e) {
+            if(window.getSelection().anchorNode.parentNode.id == 'copy_key' && document.getElementById('copy_key').innerText != window.getSelection()){
+                var key = document.getElementById('copy_key');
+                window.getSelection().selectAllChildren(key);
+            }
+        }, false);
+
+    }
+</script>
+
+
+</body>
+</html>
